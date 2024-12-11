@@ -1,9 +1,14 @@
 GAY_VERSION="1.0"
+
+set -e
+
 if [ "$(uname -m)" != "x86_64" ]; then
   echo "This script requires an x86_64 (64-bit) machine."
   exit 1
 fi
 
+DIR="$(readlink -f .)"
+PARENT_DIR="$(readlink -f ${DIR}/..)"
 OUTDIR="$(pwd)/out"
 BUILD_ARGS="LOCALVERSION=-GayAsf-${GAY_VERSION}-Beta KBUILD_BUILD_USER=Ksawlii KBUILD_BUILD_HOST=GayAsFuck"
 
