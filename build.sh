@@ -26,5 +26,5 @@ if [ ! -d "$PARENT_DIR/build-tools" ]; then
 fi
 
 # build!1!
-make -j$(nproc --all) -C $(pwd) O=out $BUILD_ARGS a53x_defconfig >/dev/null
-make -j$(nproc --all) -C $(pwd) O=out $BUILD_ARGS >/dev/null
+make -j$(nproc --all) -C $(pwd) CC="$PARENT_DIR/clang-r536225/bin/clang" O=out $BUILD_ARGS gale_defconfig >/dev/null
+make -j$(nproc --all) -C $(pwd) CC="$PARENT_DIR/clang-r536225/bin/clang" O=out $BUILD_ARGS >/dev/null
